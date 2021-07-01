@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "6e16bfa12c3e6e2d7ec4",
+    "revision": "ecc44cab7852955b28e0",
     "url": "/TokenFarm_Bridge_Eth_Bsc.git/static/css/main.bf77cb42.chunk.css"
   },
   {
-    "revision": "6e16bfa12c3e6e2d7ec4",
-    "url": "/TokenFarm_Bridge_Eth_Bsc.git/static/js/main.6e16bfa1.chunk.js"
+    "revision": "ecc44cab7852955b28e0",
+    "url": "/TokenFarm_Bridge_Eth_Bsc.git/static/js/main.ecc44cab.chunk.js"
   },
   {
     "revision": "e8039cc060f29808b480",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/TokenFarm_Bridge_Eth_Bsc.git/static/js/runtime~main.bd7a0fc6.js"
   },
   {
-    "revision": "2cc45e9573ec31a458661a0b22646bb2",
+    "revision": "22cbc38b60f6ffc204800bd4365a1874",
     "url": "/TokenFarm_Bridge_Eth_Bsc.git/index.html"
   }
 ];
