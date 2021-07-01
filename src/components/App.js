@@ -73,9 +73,9 @@ class App extends Component {
       this.setState({ farmInfo: farmInfo})
       console.log({ farmInfo: farmInfo })
 
-      let stakingIndex = await tokenFarm.methods.stakingIndex().call()
-      this.setState({ stakingIndex: stakingIndex.toString() })
-      console.log({ stakingIndex: stakingIndex })
+      // let stakingIndex = await tokenFarm.methods.stakingIndex().call()
+      // this.setState({ stakingIndex: stakingIndex.toString() })
+      // console.log({ stakingIndex: stakingIndex })
 
       // let farmableSupply = await tokenFarm.methods.farmInfo().call()
       // this.setState({ farmableSupply: farmableSupply.toString() })
