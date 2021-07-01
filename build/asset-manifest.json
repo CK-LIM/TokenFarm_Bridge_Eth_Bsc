@@ -1,7 +1,7 @@
 {
   "main.css": "/TokenFarm_Bridge_Eth_Bsc/static/css/main.bf77cb42.chunk.css",
-  "main.js": "/TokenFarm_Bridge_Eth_Bsc/static/js/main.4b5cdc06.chunk.js",
-  "main.js.map": "/TokenFarm_Bridge_Eth_Bsc/static/js/main.4b5cdc06.chunk.js.map",
+  "main.js": "/TokenFarm_Bridge_Eth_Bsc/static/js/main.7cffa10d.chunk.js",
+  "main.js.map": "/TokenFarm_Bridge_Eth_Bsc/static/js/main.7cffa10d.chunk.js.map",
   "static/css/1.efb3ddd9.chunk.css": "/TokenFarm_Bridge_Eth_Bsc/static/css/1.efb3ddd9.chunk.css",
   "static/js/1.24c7b641.chunk.js": "/TokenFarm_Bridge_Eth_Bsc/static/js/1.24c7b641.chunk.js",
   "static/js/1.24c7b641.chunk.js.map": "/TokenFarm_Bridge_Eth_Bsc/static/js/1.24c7b641.chunk.js.map",
@@ -10,6 +10,6 @@
   "static/css/main.bf77cb42.chunk.css.map": "/TokenFarm_Bridge_Eth_Bsc/static/css/main.bf77cb42.chunk.css.map",
   "static/css/1.efb3ddd9.chunk.css.map": "/TokenFarm_Bridge_Eth_Bsc/static/css/1.efb3ddd9.chunk.css.map",
   "index.html": "/TokenFarm_Bridge_Eth_Bsc/index.html",
-  "precache-manifest.655ab00155412d80341ed7c6da1d3387.js": "/TokenFarm_Bridge_Eth_Bsc/precache-manifest.655ab00155412d80341ed7c6da1d3387.js",
+  "precache-manifest.3fd95c0fe463680e3eec072058462677.js": "/TokenFarm_Bridge_Eth_Bsc/precache-manifest.3fd95c0fe463680e3eec072058462677.js",
   "service-worker.js": "/TokenFarm_Bridge_Eth_Bsc/service-worker.js"
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/TokenFarm_Bridge_Eth_Bsc/precache-manifest.655ab00155412d80341ed7c6da1d3387.js"
+  "/TokenFarm_Bridge_Eth_Bsc/precache-manifest.3fd95c0fe463680e3eec072058462677.js"
 );
 
 workbox.clientsClaim();

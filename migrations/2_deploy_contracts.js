@@ -5,7 +5,7 @@ const BridgeEth = artifacts.require('BridgeEth.sol');
 const BridgeBsc = artifacts.require('BridgeBsc.sol');
 
 module.exports = async function(deployer, network, accounts ) {
-  if(network === 'rinkeby') {
+  if(network === 'rinkeby' || network === 'kovan') {
     // Deploy Mock Dai Token
     await deployer.deploy(DaiToken)
     const daiToken = await DaiToken.deployed()
