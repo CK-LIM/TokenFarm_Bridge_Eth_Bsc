@@ -1,5 +1,4 @@
-pragma solidity ^0.5.0;
-
+pragma solidity ^0.8.0;
 import "./XToken.sol";
 import "./DaiToken.sol";
 
@@ -8,7 +7,6 @@ contract TokenFarm {
     XToken public xToken;
     DaiToken public daiToken;
     address public owner;
-    uint256 public stakingIndex = 0;
     address[] public stakers;
     uint256 internal tokenBurnRate = 2;
     uint256 public constant duration = 1 days;
@@ -16,27 +14,16 @@ contract TokenFarm {
     FarmInfo public farmInfo;   
     
     mapping(address => uint256) public stakingBalance;
-    // mapping(uint256 => StakeUser) public stake;
     mapping(address => uint256) public stakingTimestamp;
     mapping(address => bool) public hasStaked;
     mapping(address => bool) public isStaking;
     mapping(address => uint256) public poolShareRatio;
-
-    // struct StakeUser {
-    //     uint256 id;
-    //     uint256 balance;
-    //     uint256 blocknumber;
-    //     uint256 blocktimestamp;
-    //     address staker;
-    //     bool staked;
-    // }
     
     struct FarmInfo {
         uint256 blockReward;
         uint256 lastRewardBlock;  // Last block number that reward distribution occurs.
         uint256 farmableSupply; // set in init, total amount of tokens farmable
     }
-
 
     constructor(XToken _xToken, DaiToken _daiToken, uint256 _blockReward) public {
         xToken = _xToken;
@@ -49,19 +36,10 @@ contract TokenFarm {
     function stakeTokens(uint256 _amount) public {
         require(_amount > 0, "amount cannot be 0");
         updateRewardTokens(farmInfo.blockReward);
-        stakingIndex++;
         daiToken.transferFrom(msg.sender, address(this), _amount); // Stake dai token
         stakingBalance[msg.sender] = stakingBalance[msg.sender] + _amount; //Update staking balance
         stakingTimestamp[msg.sender] = block.timestamp;
         farmInfo.lastRewardBlock = block.number;
-        // stake[stakingIndex] = StakeUser(
-        //     stakingIndex,
-        //     _amount,
-        //     block.number,
-        //     block.timestamp,
-        //     msg.sender,
-        //     true
-        // );
 
         if (!hasStaked[msg.sender]) {
             stakers.push(msg.sender);
@@ -173,6 +151,7 @@ contract TokenFarm {
         }
         farmInfo.farmableSupply = totalBalance;
     }
+    
     function getPoolShareRatio() public {
         if( farmInfo.farmableSupply == 0){
             for (uint256 i = 0; i < stakers.length; i++) {

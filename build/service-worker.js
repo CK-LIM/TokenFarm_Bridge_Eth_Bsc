@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/token-farm/precache-manifest.8617511a184a1a4495ab51948497e360.js"
+  "/TokenFarm_Bridge_Eth_Bsc.git/precache-manifest.d53e8cb80643ee10d769f94bb2a76f36.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/token-farm/index.html", {
+workbox.routing.registerNavigationRoute("/TokenFarm_Bridge_Eth_Bsc.git/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });

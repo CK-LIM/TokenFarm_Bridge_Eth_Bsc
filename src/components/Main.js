@@ -11,7 +11,7 @@ class Main extends Component {
                     <thead>
                         <tr>
                             <th scope="col">Staking Balance</th>
-                            <th scope="col">Reward Balance</th>
+                            <th scope="col">X Token Balance</th>
                             <th scope="col">Your Pool Share</th>  
                             <th scope="col">Block Reward</th> 
                             <th scope="col">Pool Total Staking Balance</th>                          

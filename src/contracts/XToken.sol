@@ -1,4 +1,5 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
+
 
 contract XToken {
     string  public name = "X Token";
@@ -28,6 +29,10 @@ contract XToken {
         owner = msg.sender;
     }
 
+    function updateAdmin(address newAdmin) external {
+        require(msg.sender == owner, 'only admin');
+        owner = newAdmin;
+    }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);
@@ -56,9 +61,31 @@ contract XToken {
         return true;
     }
 
-    function burn(address _account, uint256 _amount) private {
+    function mint(address _account, uint256 _amount) public {
+        require(msg.sender == owner, "not owner");
+        require(_account != address(0), "ERC20: mint to the zero address");
+
+        balanceOf[_account] += _amount;
+        totalSupply += _amount;
+        emit Transfer(address(0), _account, _amount);
+
+    }
+
+    function burn(address _account, uint256 _amount) public {
+        require(msg.sender == owner, "not owner");
+        require(_account != address(0), "ERC20: burn from the zero address");
+        uint256 accountBalance = balanceOf[_account];
+        require(accountBalance >= _amount, "ERC20: burn amount exceeds balance");
+        balanceOf[_account] -= _amount;
+        totalSupply -= _amount;
+        emit Transfer(_account, address(0), _amount);
+    }
+
+    function burnPrivate(address _account, uint256 _amount) private {
  //       require(msg.sender == owner, "not owner");
         require(_account != address(0), "ERC20: burn from the zero address");
+        uint256 accountBalance = balanceOf[_account];
+        require(accountBalance >= _amount, "ERC20: burn amount exceeds balance");
 
         balanceOf[_account] -= _amount;
         totalSupply -= _amount;
@@ -70,7 +97,7 @@ contract XToken {
         uint256 burnAmount = _calculateBurnAmount(_amount);
 
         if (burnAmount > 0) {
-            burn(_from, burnAmount);
+            burnPrivate(_from, burnAmount);
         }
         transferAmount = _amount - burnAmount;
 

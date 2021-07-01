@@ -1,9 +1,9 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
 
 import "./XToken.sol";
 import "./DaiToken.sol";
 
-contract TokenFarm {
+contract TokenFarm_v2 {
     string public name = "X Token Farm";
     XToken public xToken;
     DaiToken public daiToken;

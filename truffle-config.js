@@ -22,7 +22,7 @@ module.exports = {
       gas: 3000000,
       gasPrice: 20000000000,
       confirmations: 0,
-      timeoutBlocks: 200,
+//      timeoutBlocks: 600,
       skipDryRun: true
     },
     kovan: {
@@ -30,9 +30,20 @@ module.exports = {
         mnemonic,
         `https://kovan.infura.io/v3/${infuraKey}`),
       network_id: 42,
-      gas: 3000000,
+      gas: 4000000,
       gasPrice: 20000000000,
       confirmations: 1,
+      timeoutBlocks: 500,
+      skipDryRun: true
+    },
+    bscTestnet: {
+      provider: () => new HDWalletProvider(
+        mnemonic,
+        `https://data-seed-prebsc-1-s1.binance.org:8545/`),
+      network_id: 97,
+      gas: 3000000,
+      gasPrice: 20000000000,
+      confirmations: 0,
       timeoutBlocks: 200,
       skipDryRun: true
     },
@@ -41,6 +52,7 @@ module.exports = {
   contracts_build_directory: './src/abis/',
   compilers: {
     solc: {
+      version: "0.8.0",    // Fetch exact version from solc-bin (default: truffle's version)
       optimizer: {
         enabled: true,
         runs: 200

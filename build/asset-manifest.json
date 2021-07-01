@@ -1,15 +1,15 @@
 {
-  "main.css": "/token-farm/static/css/main.bf77cb42.chunk.css",
-  "main.js": "/token-farm/static/js/main.fa1afed8.chunk.js",
-  "main.js.map": "/token-farm/static/js/main.fa1afed8.chunk.js.map",
-  "static/css/1.efb3ddd9.chunk.css": "/token-farm/static/css/1.efb3ddd9.chunk.css",
-  "static/js/1.6f855e5b.chunk.js": "/token-farm/static/js/1.6f855e5b.chunk.js",
-  "static/js/1.6f855e5b.chunk.js.map": "/token-farm/static/js/1.6f855e5b.chunk.js.map",
-  "runtime~main.js": "/token-farm/static/js/runtime~main.b281d237.js",
-  "runtime~main.js.map": "/token-farm/static/js/runtime~main.b281d237.js.map",
-  "static/css/main.bf77cb42.chunk.css.map": "/token-farm/static/css/main.bf77cb42.chunk.css.map",
-  "static/css/1.efb3ddd9.chunk.css.map": "/token-farm/static/css/1.efb3ddd9.chunk.css.map",
-  "index.html": "/token-farm/index.html",
-  "precache-manifest.8617511a184a1a4495ab51948497e360.js": "/token-farm/precache-manifest.8617511a184a1a4495ab51948497e360.js",
-  "service-worker.js": "/token-farm/service-worker.js"
+  "main.css": "/TokenFarm_Bridge_Eth_Bsc.git/static/css/main.bf77cb42.chunk.css",
+  "main.js": "/TokenFarm_Bridge_Eth_Bsc.git/static/js/main.6e16bfa1.chunk.js",
+  "main.js.map": "/TokenFarm_Bridge_Eth_Bsc.git/static/js/main.6e16bfa1.chunk.js.map",
+  "static/css/1.efb3ddd9.chunk.css": "/TokenFarm_Bridge_Eth_Bsc.git/static/css/1.efb3ddd9.chunk.css",
+  "static/js/1.e8039cc0.chunk.js": "/TokenFarm_Bridge_Eth_Bsc.git/static/js/1.e8039cc0.chunk.js",
+  "static/js/1.e8039cc0.chunk.js.map": "/TokenFarm_Bridge_Eth_Bsc.git/static/js/1.e8039cc0.chunk.js.map",
+  "runtime~main.js": "/TokenFarm_Bridge_Eth_Bsc.git/static/js/runtime~main.bd7a0fc6.js",
+  "runtime~main.js.map": "/TokenFarm_Bridge_Eth_Bsc.git/static/js/runtime~main.bd7a0fc6.js.map",
+  "static/css/1.efb3ddd9.chunk.css.map": "/TokenFarm_Bridge_Eth_Bsc.git/static/css/1.efb3ddd9.chunk.css.map",
+  "static/css/main.bf77cb42.chunk.css.map": "/TokenFarm_Bridge_Eth_Bsc.git/static/css/main.bf77cb42.chunk.css.map",
+  "index.html": "/TokenFarm_Bridge_Eth_Bsc.git/index.html",
+  "precache-manifest.d53e8cb80643ee10d769f94bb2a76f36.js": "/TokenFarm_Bridge_Eth_Bsc.git/precache-manifest.d53e8cb80643ee10d769f94bb2a76f36.js",
+  "service-worker.js": "/TokenFarm_Bridge_Eth_Bsc.git/service-worker.js"
 }
