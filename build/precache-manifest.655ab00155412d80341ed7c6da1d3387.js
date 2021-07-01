@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/TokenFarm_Bridge_Eth_Bsc/static/js/runtime~main.d44a7d01.js"
   },
   {
-    "revision": "faf6855446a174fb8ca7a6c6d87fde12",
+    "revision": "fb62212cdd20a279fb86feafd7e42913",
     "url": "/TokenFarm_Bridge_Eth_Bsc/index.html"
   }
 ];
