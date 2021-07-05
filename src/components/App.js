@@ -44,6 +44,7 @@ class App extends Component {
     if (xTokenData) {
       const xToken = new web3.eth.Contract(XToken.abi, xTokenData.address)
       this.setState({ xToken })
+      console.log(this.state.xToken)
       let xTokenBalance = await xToken.methods.balanceOf(this.state.account).call()
       const tokenFarmData = TokenFarm.networks[networkId]
       let xTokenBalance_farm = await xToken.methods.balanceOf(tokenFarmData.address).call()
@@ -70,7 +71,7 @@ class App extends Component {
       console.log({ poolShareRatio: poolShareRatio })
 
       let farmInfo = await tokenFarm.methods.farmInfo().call()
-      this.setState({ farmInfo: farmInfo})
+      this.setState({ farmInfo})
       console.log({ farmInfo: farmInfo })
 
       // let stakingIndex = await tokenFarm.methods.stakingIndex().call()
@@ -87,7 +88,6 @@ class App extends Component {
       //   this.setState({stake: stake.toString()})
       //   console.log({stake: stake})
       // }
-
 
     } else {
       window.alert('TokenFarm contract not deployed to detected network.')
@@ -113,6 +113,7 @@ class App extends Component {
     }
   }
 
+
   stakeTokens = (amount) => {
     this.setState({ loading: true })
     this.state.daiToken.methods.approve(this.state.tokenFarm._address, amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
@@ -136,6 +137,15 @@ class App extends Component {
     this.state.xToken.methods.approve(this.state.tokenFarm._address, amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
       this.state.tokenFarm.methods.emergencyUnstakeTokens().send({ from: this.state.account }).on('transactionHash', (hash) => {
         this.setState({ loading: false })
+      })
+    })
+  }
+
+  transferOwnership = (address, amount) =>{
+    this.setState({loading: true})
+    this.state.xToken.methods.approve(this.state.tokenFarm._address, amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.state.tokenFarm.methods.transferOwnership(address, amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
+    this.setState({loading: false})
       })
     })
   }
@@ -172,6 +182,7 @@ class App extends Component {
         stakeTokens={this.stakeTokens}
         unstakeTokens={this.unstakeTokens}
         emergencyUnstakeTokens={this.emergencyUnstakeTokens}
+        transferOwnership={this.transferOwnership}
       />
     }
 

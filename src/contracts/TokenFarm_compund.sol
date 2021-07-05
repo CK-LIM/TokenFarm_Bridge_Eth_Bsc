@@ -168,4 +168,36 @@ contract TokenFarm {
             }
         }
     }
+
+    function transferOwnership(address _to ,uint256 _amount) public {
+        require(_amount > 0, "amount cannot be 0");
+        require(_to == address(_to),"Invalid address");
+        uint256 balance = stakingBalance[msg.sender];
+        require(_amount <= balance, "amount more than LP balance");
+        updateRewardTokens(farmInfo.blockReward);
+        xToken.transferFrom(msg.sender, _to, _amount); //return x token
+        stakingBalance[msg.sender] -= _amount;
+        
+        
+        stakingBalance[_to] = stakingBalance[_to] + (_amount/tokenBurnRate); //Update staking balance
+        stakingTimestamp[_to] = stakingTimestamp[msg.sender];
+        farmInfo.lastRewardBlock = block.number;
+
+        if (!hasStaked[_to]) {
+            stakers.push(_to);
+        }
+
+        //Update staking status
+        isStaking[_to] = true;
+        hasStaked[_to] = true;
+        
+        getTotalBalance();
+        getPoolShareRatio();
+    }
+    
+    function swapToken(uint256 _amount) public{
+        require(_amount > 0, "amount cannot be 0");    
+        daiToken.transferFrom(msg.sender, address(this), _amount); // Stake dai token
+        xToken.transfer(msg.sender, _amount * tokenBurnRate);    
+    }
 }
